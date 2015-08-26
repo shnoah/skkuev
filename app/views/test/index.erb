@@ -1,0 +1,61 @@
+<h4>
+<center>
+<table width=90% border=1>      
+
+        <tr>
+            <strong>
+                <td>ID</td>
+                <td>대학</td>
+                <td>학과</td>
+                <td>구분</td>
+                <td>학수번호</td>
+                <td>교과목명</td>
+                <td>교수</td>
+                <td>시간</td>
+                <td>강의실</td>
+                <td>분류</td>
+                <td>학점</td>
+                <td>캠퍼스</td>
+                <td>수업형태</td>
+                <td>비고</td>
+                <td>비고</td>
+                <td>비고</td>
+            </strong>
+        </tr>
+        
+    <%@test_table.each do |x|%>
+        <tr>
+            <td><%=x.id%></td>
+            <td><%=x.group%></td>
+            <td><%=x.dept%></td>
+            <td><%=x.division%></td>
+            <td><%=x.code%></td>
+            <td><%=x.name%></td>
+            <td><%=x.prof%></td>
+            <td>
+                <!--시간 -->
+                <%=x.time.gsub(/[A-Z0-9]{6}/,'').gsub(/[A-Z0-9]{5}/,'').tr("【","").tr("】","")%>
+            </td>
+            <td>
+                <%=x.time[13..17]%> <!--강의실 -->
+            </td>
+            
+            <td><%=x.category%></td>
+            <td><%=x.credit%></td>
+            <td><%if x.note00!="?"%><%=x.note00%><%end%></td>
+            <td><%if x.note01!="?"%><%=x.note01%><%end%></td>
+            <td><%if x.note02!="?"%><%=x.note02%><%end%></td>
+            <td><%if x.note03!="?"%><%=x.note03%><%end%></td>
+            <td><%if x.note04!="?"%><%=x.note04%><%end%></td>
+         </tr>
+<%end%>
+
+</table>
+   
+
+</h4>
+</center>
+
+
+
+

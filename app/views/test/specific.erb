@@ -1,0 +1,7 @@
+<% @writes.each do |t| %>
+<div>
+<h4><%=Subject.find(t.subject_id).name%></h4>
+    <p><%=t.content%></p>
+</div>
+<%end%>
+<a href="/test/write"> 글쓰기</a>
