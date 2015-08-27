@@ -36,10 +36,31 @@ addCategory(category[0][2], "일본학전공");
 addCategory(category[0][2], "글로벌문화콘텐츠");
 addCategory(category[0][2], "데이터사이언스");
 addCategory(category[0], "법과대학");
+addCategory(category[0][3], "법학과");
 addCategory(category[0], "사범대학");
+addCategory(category[0][4], "교육학과");
+addCategory(category[0][4], "수학교육학과");
+addCategory(category[0][4], "한문교육학과");
+addCategory(category[0][4], "컴퓨터교육학과");
 addCategory(category[0], "사회과학대학");
+addCategory(category[0][5], "사회학과");
+addCategory(category[0][5], "사회복지학과");
+addCategory(category[0][5], "신문방송학과");
+addCategory(category[0][5], "심리학과");
+addCategory(category[0][5], "행정학과");
+addCategory(category[0][5], "글로벌리더학과");
+addCategory(category[0][5], "소비자가족학과");
+addCategory(category[0][5], "아동청소년학과");
 addCategory(category[0], "예술대학");
+addCategory(category[0][6], "예술대학");
+addCategory(category[0][6], "미술학과");
+addCategory(category[0][6], "연기예술학과");
+addCategory(category[0][6], "디자인학과");
+addCategory(category[0][6], "무용학과");
+addCategory(category[0][6], "영상학과");
 addCategory(category[0], "유학대학");
+addCategory(category[0][7], "유학대학");
+addCategory(category[0][7], "유학동양학과");
 addCategory(category, "자연과학");
 addCategory(category[1], "implement");
 addCategory(category[1][0], "nail");
@@ -74,24 +95,24 @@ function initForm(form) {
   for (i = 0; i < category.length; i++)
     form.subject[i].text = category[i].value;
   form.subject.selectedIndex = 0;
-  form.contents.selectedIndex = 0;
+  form.group.selectedIndex = 0;
   change_subject(form);
 }
 
 function change_subject(form) {
   var i = form.subject.selectedIndex;
-  form.contents.length = category[i].length;
-  for (j = 0; j < form.contents.length; j++)
-    form.contents[j].text = category[i][j].value;
-  form.contents.selectedIndex = 0;
-  change_contents(form);
+  form.group.length = category[i].length;
+  for (j = 0; j < form.group.length; j++)
+    form.group[j].text = category[i][j].value;
+  form.group.selectedIndex = 0;
+  change_group(form);
 }
 
-function change_contents(form) {
+function change_group(form) {
   var i = form.subject.selectedIndex
-  var j = form.contents.selectedIndex;
-  form.components.length = category[i][j].length;
-  for (k = 0; k < form.components.length; k++)
-    form.components[k].text = category[i][j][k].value;
-  form.components.selectedIndex = 0;
+  var j = form.group.selectedIndex;
+  form.dept.length = category[i][j].length;
+  for (k = 0; k < form.dept.length; k++)
+    form.dept[k].text = category[i][j][k].value;
+  form.dept.selectedIndex = 0;
 }

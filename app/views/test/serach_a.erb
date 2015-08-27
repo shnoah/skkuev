@@ -1,0 +1,13 @@
+<h1>검색 후 나오는 페이지</h1> 
+
+<%= params[:components]%>의 강의 목록 
+
+<form name="test_b" method="POST" action="/test/write_cate_a">
+    단과대학 = <input type="text" value="<%=params[:contents]%>" name="contents_a"  onfocus='blur()'><br>
+    학과 =     <input type="text" value="<%=params[:components]%>" name="compenents_a" readonly><br>
+    강의평가 = <textarea name="ev_a"> </textarea>
+    <button type="submit" class="btn tf-btn btn-default">쓰기</button>
+</form>
+
+
+

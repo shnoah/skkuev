@@ -23,7 +23,15 @@ class CreateSubjects < ActiveRecord::Migration
       #임시 사용 필드???
       #뭐가 필요할까
       
+      def self.search(search)
+        if search
+          find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+        else
+          find(:all)
+        end
+      end
 
+      
       t.timestamps null: false
     end
   end

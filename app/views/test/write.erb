@@ -1,135 +1,32 @@
-<%= form_tag "/test/write_complete", method: "post" do %>
+
         
 <div>
 
-  <!-- Nav tabs -->
+
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-    <div>
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#1" aria-controls="home" role="tab" data-toggle="tab">a</a></li>
-    <li role="presentation"><a href="#2" aria-controls="profile" role="tab" data-toggle="tab">b</a></li>
-    <li role="presentation"><a href="#3" aria-controls="messages" role="tab" data-toggle="tab">c</a></li>
-    <li role="presentation"><a href="#4" aria-controls="settings" role="tab" data-toggle="tab">d</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="1">.aasdad..</div>
-    <div role="tabpanel" class="tab-pane" id="2">...123123</div>
-    <div role="tabpanel" class="tab-pane" id="3">..41.</div>
-    <div role="tabpanel" class="tab-pane" id="4">..111.</div>
-  </div>
-
-</div></div>
-
-    <div role="tabpanel" class="tab-pane" id="profile">1</div>
-    <div role="tabpanel" class="tab-pane" id="messages">2.</div>
-    <div role="tabpanel" class="tab-pane" id="settings">3</div>
-  </div>
-
-</div>
-<div class="dropdown">
-
-<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-과목<span class="caret"></span></button>
-
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
    <% @subject.each do |t| %>
     <% if %>
-    <% t.id == 1 or Subject.find(t.id).group != Subject.find(t.id-1).group %>                                  
-          <li>    
-              <div class="dropdown">
+    <% t.id == 1 or Subject.find(t.id).group != Subject.find(t.id-1).group %> 
     
-               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <% a=Subject.find(t.id).group %>
-                <%=Subject.find(t.id).group %><span class="caret"></span></button>
-       
-                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <% @subject.each do |b| %>
-                    <% if %>
-                    <% Subject.find(b.id).group == a and (b.id == 1 or Subject.find(b.id).dept != Subject.find(b.id-1).dept)  %>
-                        <li>   
-                             <div class="dropdown">
-                    
-                               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <%=Subject.find(b.id).dept %><span class="caret"></span></button>
-                       
-                               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        
-                                <li>   
-                                
-                                </li>
-                                             
-                                </ul>
-                                </div>
-                                
-                                
-                                </li>
-                                <% end %>  
-                                <% end %>
-                                </ul>
-                            </div>
-                
-                
-                
-                
+    <li role="presentation" class="active">
+    <a href='#<%=Subject.find(t.id).group%>' aria-controls="home" role="tab" data-toggle="tab">
     
-              
-          </li>
-   <%end%>
-   <%end%>
-</ul>
-</div>
-                  
-                  
-            
-            
-        <div class="dropdown">
-        
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-           과목<span class="caret"></span></button>
-           
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                  
-                  
-                  <% @subject.each do |t| %>
-                  <li><input type="radio" name='subject_id' value='<%=t.id%>'>
-                  <%=Subject.find(t.id).code%>
-                  <%=Subject.find(t.id).name %>
-                  <%=Subject.find(t.id).prof%>
-                  <%=Subject.find(t.id).time%>
-                  <%=Subject.find(t.id).category%>
-                  <%=Subject.find(t.id).credit %>
-                  <%=Subject.find(t.id).l_time %>        
-                  </li>
-                    <%end%>
-            </ul>
-            </div>
-        
-        <input type="text" class="form-control" name="content" placeholder="강의평가">
-  <br>
-  <button class="btn btn-success">등록하기</button>
-  <% end %>
- 
-<!-- 증환 3단 선택창 -->
-<br>
-<div class="content  col-xs-12 col-md-12 col-lg-12">
-    <form name="form" method="POST" action="#">
-    <select name="subject" onchange="change_subject(this.form)" class="form-control"></select>
-    <br>
-    <select name="contents" onchange="change_contents(this.form)" class="form-control"></select>
-    <br>
-    <select name="components" class="form-control"></select>
-    </form>
+    <% a=Subject.find(t.id).group %>
+    <%=Subject.find(t.id).group %>
+    </a></li>
+    <%end%>
+<%end%>
+
+  </ul>
+
+  <!-- Tab panes -->
+     <% @subject.each do |t| %>
+    <% if %>
+    <% t.id == 1 or Subject.find(t.id).group != Subject.find(t.id-1).group %> 
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id='<%=Subject.find(t.id).group%>'></div>
+
+  </div>
+    <%end%>
+<%end%>
 </div>
