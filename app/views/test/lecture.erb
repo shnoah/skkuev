@@ -1,0 +1,67 @@
+
+<div style="height:100px"></div> <!--걍 여백 -->
+
+<%if Evaluation.find_by_lecture_id(@id)==nil%>
+    <div class="alert alert-danger" role="alert">아직 평가가 없습니다. 첫 평가를 남겨주세요!</div>
+<%end%>
+
+<div class="row jumbotron">
+    
+    <div class="col-md-12 col-xs-12"><h1><%=@lecture.first.name%></h1></div>
+    
+    <div class="col-md-3 col-xs-3">교수</div>
+    <div class="col-md-9 col-xs-9"><%=@lecture.first.prof%></div>
+    
+    <div class="col-md-3  col-xs-3">강의시간</div>
+    <div class="col-md-9  col-xs-9">   
+        <%=@lecture.first.time.gsub(/[A-Z0-9]{6}/,'').gsub(/[A-Z0-9]{5}/,'')
+        .tr("【","").tr("】","")%>    
+    </div>
+    
+    <div class="col-md-3  col-xs-3">강의실</div>
+    <div class="col-md-9  col-xs-9">
+        <%if @lecture.first.time[18]=="】"%>
+            <%=@lecture.first.time[13..17]%> <!--강의실 번호가 5자리인 경우 -->
+        <%else%>
+            <%=@lecture.first.time[13..18]%> <!--강의실 번호가 6자리인 경우 -->
+        <%end%> 
+    </div>
+  
+    <div class="col-md-3  col-xs-3">유형</div>
+    <div class="col-md-9  col-xs-9"><%=@lecture.first.note01%></div>
+    <div class="col-md-12" style="height:50px"></div>
+    <div class="col-md-3  col-xs-3"><h3>평점</h3></div>
+    
+    <div class="col-md-9  col-xs-9">
+        <h3>
+        <%=@avg%> (<%=@eval.count%>명 참여)
+        </h3>
+    </div>
+    
+    <div class="col-md-12">
+        <form action="/test/evaluate" method="POST">
+            <input type="hidden" name="lecture_id" value="<%=@lecture.first.code%>">
+            <input type="hidden" name="lecture_name" value="<%=@lecture.first.name%>">
+            <input type="hidden" name="lecture_prof" value="<%=@lecture.first.prof%>">
+            
+            <input class="btn btn-primary" type="submit" value="평가하기">
+        </form>
+    </div>
+    
+</div>    
+
+
+</div>
+
+  
+        <div class="row">    
+            <div class="col-md-1  col-xs-1">평점</div>
+            <div class="col-md-11  col-xs-11">소감</div>
+            <%@eval.each do |x|%>
+                <div class="col-md-1  col-xs-1"><%=x.lecture_score%></div>
+                <div class="col-md-11  col-xs-11"><%=x.content%></div>
+            <%end%>
+    
+</div>
+
+

@@ -1,9 +1,9 @@
 <% for i in 1..Subject.count%>
     
-    <%j=Subject.find(i)%>
+    <%j=Subject.find(i)
     
     <%if j.dept==@i%>
-    
+
         <%=j.name%> / <%=j.code%> / <%=j.prof%><br>
         
     <%end%>

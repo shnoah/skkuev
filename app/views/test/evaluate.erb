@@ -1,0 +1,25 @@
+
+ 
+ 
+<div class=jumbotron> 
+ <h3><%=@lecture_name%> / <%=@lecture_prof%> / <%=@lecture_id%>에 대한 평가를 남겨주세요</h3>
+</div>
+
+
+<form action="/test/evaluate_write" method="POST" enctype="multipart/form-data" name="write_form" onsubmit="return overTag()">
+    <input type="hidden" name="lecture_id" value=<%=@lecture_id%>>
+    <div class="row">
+        <div class="col-md-12">
+             <input type="text" name="lecture_score" placeholder="평점을 입력해주세요 (정수)" required>
+        </div>
+        <div class="col-md-12">
+             <input type="text" name="content" placeholder="소감을 입력해주세요" required>
+        </div>
+        <div class="col-md-12">
+              <input class="btn btn-default" type="submit" value="제출하기">
+         </div>
+     </div>
+   </div>
+</form>
+
+ 

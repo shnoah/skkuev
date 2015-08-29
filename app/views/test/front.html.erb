@@ -1,0 +1,371 @@
+    <!-- 증환 뷰 작업중 -->
+    
+    <!-- 상단바
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="../assets/img/icon.png" style="width: 40px; margin-top: 5px" align="left">
+          <a class="navbar-brand" href="/">SKKU <span class="color">E</span></a>
+        </div>
+
+        <!-- 우측메뉴 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#tf-home" class="page-scroll">검색</a></li>
+            <li><a href="#tf-services" class="page-scroll">강의</a></li>
+            <li><a href="#tf-testimonials" class="page-scroll">마켓</a></li>
+            <li><a href="#tf-works" class="page-scroll">책가방</a></li>
+            <li><a href="/test/write" class="action">강의평 올리기</a></li>
+            <li><a href="/test/member" class="action">내 정보</a></li>
+            <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+        </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>    
+    
+    <!-- 검색
+    ==========================================-->
+    <div id="tf-home" class="text-center">
+        <div class="overlay">
+            <div class="content">
+                <img src="../assets/img/eva.png" style="width: 100px; margin-top: 5px" align="center">
+                <h1>성균관대학교  <strong><span class="color">강의평가</span></strong></h1>
+                <p class="lead"> 가볍고 <strong> 정확하게 </strong> 그리고 <strong> 솔직한 </strong></p>
+                <form id="search" action="/test/check2">
+                  <div class="form-group">
+                    <input type="search" class="form-control" placeholder="과목 및 교수명" >
+                  </div>
+                <button id="submit" class="btn tf-btn btn-default">검색</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Section. 3단 선택
+    ==========================================-->
+    <div id="tf-services" class="text-center">
+        <div class="container" style="padding-bottom: 100px;">
+          <div class="section-title center">
+            <h2 style="text-align:left"><strong>강의 </strong> 찾기</h2>
+            <div class="line">
+            </div>
+          </div>
+        <div class="col-xs-12 col-md-3 col-lg-3">
+          <form name="form" method="POST" action="/test/write_cate">
+             <ul class="nav nav-sidebar">
+                <li>
+                  <select name="subject" onchange="change_subject(this.form)" class="form-control"></select>
+                </li>
+                <li>
+                  <select name="group"onchange="change_group(this.form)" class="form-control"></select>
+                </li>
+                <li>
+                  <select name="dept" class="form-control"></select>
+                </li>
+                <li>
+                  <button type="submit" class="btn tf-btn btn-default">검색</button>
+                </li>
+              </ul>
+            </form>
+        </div> 
+          <div class="col-xs-12 col-md-9 col-lg-9">
+            <div id="post_div">
+            <h1>여기에 결과값을 도출할 것입니다.</h1>
+            </div>
+          </div>
+    </div>
+    
+    <!-- Market Section
+    ==========================================-->
+    <div id="tf-testimonials" class="text-center">
+        <div class="overlay">
+            <div class="container">
+            <!-- 가격입력창 -->
+                <div class="section-title center">
+                    <h2 style="text-align:left"><strong>강의 </strong> 마켓</h2>
+                    <span style="float:right"><button type="button" class="btn tf-btn btn-default" data-toggle="modal" data-target="#myModal">팔기</button></span>
+                    <div class="line">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="testimonial" class="owl-carousel owl-theme">
+                        <% @sb.each do |b| %>
+                            <% if b.id > 5 %>
+                            <% else %>
+                                <div class="item">
+                                    <h5><%=b.title%> | <%=b.bunho%> | <%=b.money%>원
+                                    <p><%=b.sulmung%></p></h5>
+                                    <p><strong>아이디</strong></p>
+                                    <p>2015.09.01.17:09</p>
+                                </div>
+                            <% end %>
+                        <% end %>
+                        </div>
+                    </div>
+                </div>
+              <a href="/test/market" class="fa fa-angle-down page-scroll"></a>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">강의판매</h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                  <%= form_tag("/test/market", method: "post") do %>
+                    <div class="row">
+                        <div class="form-group">
+                          <label for="title">강의명</label>
+                          <input type="text" class="form-control" name="title" placeholder="강의명">
+                        </div>
+                        <div class="form-group">
+                          <label for="money">가격</label>                    
+                          <input type="integer" class="form-control" name="money" placeholder="가격">
+                        </div>
+                        <div class="form-group">
+                          <label for="bunho">카카오톡 아이디 or 이메일 or 핸드폰 번호</label> 
+                          <input typle="email"  class="form-control" name="bunho" placeholder="010-1111-1111"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="sulmung">추가설명</label> 
+                          <input type="text" class="form-control" name="sulmung" placeholder="설명">
+                        </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                        <button type="submit" class="btn tf-btn btn-default">올리기</button>
+                      </div>
+                    <% end %>
+                    </div>  
+                    
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+    </div>                
+
+    <!-- Portfolio Section
+    ==========================================-->
+    <div id="tf-works">
+        <div class="container"> <!-- Container -->
+            <div class="section-title text-center center">
+                <h2><strong>책가방</strong></h2>
+                <div class="line">
+                <hr>
+                </div>
+                <div class="clearfix"></div>
+                <small><em>담은 강의평을 한눈에 보세요</em></small>
+            </div>
+            <div class="space"></div>
+
+            <div class="categories">
+                
+                <ul class="cat">
+                    <li class="pull-left"><h4>바구니 선택:</h4></li>
+                    <li class="pull-right">
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active">전체보기</a></li>
+                            <li><a href="#" data-filter=".web">교양</a></li>
+                            <li><a href="#" data-filter=".photography">제1전공</a></li>
+                            <li><a href="#" data-filter=".app" >제2전공</a></li>
+                            <li><a href="#" data-filter=".branding" >제3전공</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="lightbox" class="row">
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding all">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/01.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography app all">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/02.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding all">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/03.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/04.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/05.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-3 col-lg-3 app">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/06.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/07.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="../assets/img/portfolio/08.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>  
+        </div>
+    </div>
+
+    <!-- About Us Section + Footer Section
+    ==========================================-->    
+    
+    <nav id="footer">
+      <div class="content col-xs-12 col-md-12 col-lg-12" style="padding-left: 0px; padding-right: 0px; padding-top: 20px;">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="text-center">
+          <h2>about<strong><span class="color">Us</span></strong></h2>
+          </div>
+          <hr>
+        </div>
+        
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="text-center">
+          <h2>공지사항</h2>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="pull-left fnav">
+          <p style="font-size: 14px;">성균관대학교 <a href="#">멋쟁이사자처럼</a> ©2015. <a href="#">Likelion SKKU</a></p>
+          <p style="font-size: 5px;">ALL RIGHTS RESERVED. COPYRIGHT © 2014. Designed by <a href="https://dribbble.com/shots/1817781--FREEBIE-Spirit8-Digital-agency-one-page-template">Robert Berki</a> and Coded by <a href="https://dribbble.com/jennpereira">Jenn Pereira</a></p>
+        </div>
+        <div class="pull-right fnav">
+          <ul class="footer-social">
+            <li><a href="http://www.facebook.com/likelionskku"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="http://www.facebook.com/likelion.net"><i class="fa fa-dribbble"></i></a></li>
+            <li><a href="http://www.skku.edu"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <script>
+      $(function() {
+        $("#submit").click(
+          function(){
+            //과목명을 받아서
+            var sub = $("#imsi").val();
+            //(옆에) 출력
+            $("#post_div").append("<p>" + sub + "</p>");
+          }
+        );
+      })</script>

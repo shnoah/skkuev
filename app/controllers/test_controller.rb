@@ -2,15 +2,13 @@ class TestController < ApplicationController
     
     
      def index
-    
         @test_table=Subject.all
-    
      end
         
     
     #태훈 실험용
       def front
-        @write = Write.all
+        @write = Evaluation.all
         @sb = Market.all
       end
       
@@ -32,18 +30,15 @@ class TestController < ApplicationController
     #운 테스트
     
     def write_cate
-      @test_a = params[:choice_a]
+          @i = params[:dept]
+    
     end
     
-    def serach_a
-      @subject = Subject.all
+    def test_write
+     
     end
     
-    def c_write_action
-      cw = Write.new
-    end
-    
-    
+  
     
     #증환 테스트
     
@@ -54,8 +49,6 @@ class TestController < ApplicationController
     def check
     
        @i = params[:dept]
-       
-       
     
     end
     
@@ -69,10 +62,37 @@ class TestController < ApplicationController
         sb.save
         
     end
+     
+     def lecture
+       @id = params[:id].to_s
+       @lecture = Subject.where(code: params[:id])
+       @eval = Evaluation.where(lecture_id: params[:id])
+       
+       sum=0
+       @avg=0
     
-     def index
+        @eval.each do |x|
+            sum+=x.lecture_score
+        end
+
+        if @eval.count!=0
+            @avg=sum/@eval.count
+        end
     
-        @test_table=Subject.all
     
+     end
+     
+
+     
+     def evaluate 
+         @lecture_name = params[:lecture_name]
+         @lecture_prof = params[:lecture_prof]
+         @lecture_id = params[:lecture_id]
+     end
+     
+    def evaluate_write
+       Evaluation.create(lecture_id: params[:lecture_id], lecture_score: params[:lecture_score], content: params[:content])
+     
+       redirect_to action: "lecture", id: params[:lecture_id]
      end
 end

@@ -1,0 +1,32 @@
+
+        
+<div>
+
+
+  <ul class="nav nav-tabs" role="tablist">
+   <% @subject.each do |t| %>
+    <% if %>
+    <% t.id == 1 or Subject.find(t.id).group != Subject.find(t.id-1).group %> 
+    
+    <li role="presentation" class="active">
+    <a href='#<%=Subject.find(t.id).group%>' aria-controls="home" role="tab" data-toggle="tab">
+    
+    <% a=Subject.find(t.id).group %>
+    <%=Subject.find(t.id).group %>
+    </a></li>
+    <%end%>
+<%end%>
+
+  </ul>
+
+  <!-- Tab panes -->
+     <% @subject.each do |t| %>
+    <% if %>
+    <% t.id == 1 or Subject.find(t.id).group != Subject.find(t.id-1).group %> 
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id='<%=Subject.find(t.id).group%>'></div>
+
+  </div>
+    <%end%>
+<%end%>
+</div>
