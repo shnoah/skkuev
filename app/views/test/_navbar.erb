@@ -1,0 +1,46 @@
+
+    <!-- 두번째 상단바
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default2 navbar-fixed-top on">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="../assets/img/icon.png" style="width: 40px; margin-top: 5px" align="left">
+          <a id="logo" class="navbar-brand" href="/" onClick="window.location.href='/'">SKKU <span class="color">E</span></a>
+        </div>
+
+        <!-- 우측메뉴 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form name="form" method="POST" action="/test/write_cate">
+          <ul class="nav navbar-nav navbar-right">
+          <li><button class="btn tf-btn btn-default" style="margin-top: 5px;"> 검색 </button></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li style="margin-top: 2px;"><select name="dept" class="form-control" style="width: 226px; padding-left: 12px; border-left-width: 1px; margin-left: 20px; margin-right: 20px; margin-top: 6px;"></select></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li style="margin-top: 2px;"><select name="group"onchange="change_group(this.form)" class="form-control" style="width: 226px; padding-left: 12px; border-left-width: 1px; margin-left: 20px; margin-right: 20px; margin-top: 6px;"></select></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li style="margin-top: 2px;"><select name="subject" onchange="change_subject(this.form)" class="form-control" style="width: 226px; padding-left: 12px; border-left-width: 1px; margin-left: 20px; margin-right: 20px; margin-top: 6px;"></select></li>
+          </ul>
+            </form>          
+            <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+            </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    <script>
+    $('#logo').click(function('/')
+    </script>
+    
+    <!-- 동적 3단 계단 -->
+    <script src="../assets/js/select.js"></script>

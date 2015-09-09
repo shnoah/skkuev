@@ -1,23 +1,120 @@
 
+<!-- SmartMenus jQuery Bootstrap Addon CSS -->
+<link href="http://skkuev-noonproject.c9.io/assets/smartmenu/addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet">
 
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://skkuev-noonproject.c9.io/assets/smartmenu/libs/demo-assets/bootstrap/js/bootstrap.min.js"></script>
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="http://skkuev-noonproject.c9.io/assets/smartmenu/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="http://skkuev-noonproject.c9.io/assets/smartmenu/addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
+
+<!-- ################################## -->
+
+<!-- Static navbar -->
+<div class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">강의평가</a>
+  </div>
+  <div class="navbar-collapse collapse">
+
+    <!-- Left nav -->
+    <ul class="nav navbar-nav">
+      <li><a href="#">ABOUT</a></li>
+      
+      
+      <!-- 대학 단위까지는 하드코딩 
+      
+      대학 뽑아서 과 나열
+      과 뽑아서 과목 나열
+      -->
+      
+      <li><a href="#">전공<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">인문사회</li>
+          <li><a href="#">경영대학</a></li>
+          <li><a href="#">경제대학</a></li>
+          <li><a href="#">문과대학</a></li>
+          <li><a href="#">법과대학</a></li>
+          <li><a href="#"><strong>사회과학대학</strong></a></li>
+          <li><a href="#">예술대학</a></li>
+          <li><a href="#">유학대학</a></li>
+          <li><a href="#"><strong>사범대학</strong><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            
+            <!-- 대학에 맞춰 과를 뽑아준다 -->
+            <%cnt=0%>
+            <%dept_t=Array.new%>
+            
+            <%@test_table.each do |i|%>
+              <%if i.group=="사범대학"%>
+              
+                <%if cnt==0%>
+                  <%dept_t[cnt] = i.dept%>
+                  <%cnt+=1%>
+                <%elsif cnt!=0 && dept_t[cnt-1] == i.dept%>
+                <%else%>                  
+                  <%dept_t[cnt] = i.dept%>
+                  <%cnt+=1%>
+                <%end%>
+             
+              <%end%>  
+            <%end%>
+            
+            <% for i in 0..dept_t.count%>
+                <li><a href="#"><%=dept_t[i]%></a></li>
+            <%end%>
+            
+              <li class="divider"></li>
+              
+              <li><a href="#">교육학과<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Menu item 00</a></li>
+                  <%@test_table.each do |x|%>
+                    <%if x.dept=="교육학과"%>
+                      <li><a href="#"><%=x.name%></a></li>
+                    <%end%>
+                  <%end%>
+
+                  <li><a href="#">Menu item 60</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Another link</a></li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li class="dropdown-header">자연과학</li>
+
+        </ul>
+      </li>
+      <li><a href="#">교양</a></li>
+      <li><a href="#">아이캠 모아보기?</a></li>
+      <li><a href="#">마켓</a></li>
+      
+    </ul>
+
+  
+  </div><!--/.nav-collapse -->
 </div>
 
 
 
 
 
+
+
+<div style="height:500px"></div>
 <h4>
 <center>
 DB 확인용 페이지<br><br>

@@ -6,7 +6,7 @@ class TestController < ApplicationController
      end
         
     
-    #태훈 실험용
+    
       def front
         @write = Evaluation.all
         @sb = Market.all
@@ -30,8 +30,9 @@ class TestController < ApplicationController
     #운 테스트
     
     def write_cate
+        
           @i = params[:dept]
-    
+          
     end
     
     def test_write
@@ -61,6 +62,13 @@ class TestController < ApplicationController
         sb.sulmung = params[:sulmung]
         sb.save
         
+        redirect_to '/'
+    end
+    
+    def market_board
+    
+        @sb = Market.all
+    
     end
      
      def lecture
@@ -72,27 +80,64 @@ class TestController < ApplicationController
        @avg=0
     
         @eval.each do |x|
-            sum+=x.lecture_score
+        sum+=x.lecture_score
         end
 
         if @eval.count!=0
             @avg=sum/@eval.count
         end
-    
-    
      end
      
 
      
-     def evaluate 
+    def evaluate 
          @lecture_name = params[:lecture_name]
          @lecture_prof = params[:lecture_prof]
          @lecture_id = params[:lecture_id]
-     end
+    end
      
     def evaluate_write
        Evaluation.create(lecture_id: params[:lecture_id], lecture_score: params[:lecture_score], content: params[:content])
      
        redirect_to action: "lecture", id: params[:lecture_id]
-     end
+    end
+    
+    def delete
+       one_post = Evaluation.find(params[:id])
+       one_post.destroy
+       
+       one_page = one_post.lecture_id
+       redirect_to action: "lecture", id: one_page
+       
+    end
+    
+    def modify
+        @one_post = Evaluation.find(params[:id])
+    end
+    
+    def update
+    
+        one_post = Evaluation.find(params[:id])
+        one_post.lecture_score = params[:new_lecture_score]
+        one_post.content = params[:new_content]
+        one_post.save
+ 
+        one_page = one_post.lecture_id
+        redirect_to action: "lecture", id: one_page
+    end
+ 
+    def test
+    end
+    def test_th
+        
+          @i = params[:dept]
+          
+    end
+    
+    def finding_test
+    end
+    
+    def finding_test_result
+        @result = Subject.where(name: params[:searching])
+    end
 end

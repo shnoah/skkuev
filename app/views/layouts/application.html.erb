@@ -5,7 +5,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>성균관대학교 강의평가</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,16 +14,15 @@
     <meta name="keywords" content="bootstrap theme, portfolio template, digital agency, onepage, mobile responsive, spirit8, free website, free theme, themeforces themes, themeforces wordpress themes, themeforces bootstrap theme">
     <meta name="author" content="ThemeForces.com">
     
-    <!-- 아이콘
+    <!-- Favicons
     ================================================== -->
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/img/favicon.png">  
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
+    
 
     <!-- 부트스트랩 -->
-    <link rel="stylesheet" type='text/css' href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" type='text/css' href="../../assets/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type='text/css' href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" type='text/css' href="../assets/fonts/font-awesome/css/font-awesome.css">
 
     <!-- 슬라이드 카로우셀
     ================================================== -->
@@ -47,27 +46,24 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <!-- 동적 3단 계단 -->
-  <script src="../assets/js/select.js"></script>
+    </head>
+    <body onLoad = "initForm(document.form)">
+       
+    <%= yield %>
     
-</head>
-<body onLoad = "initForm(document.form)">
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery.1.11.1.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+      <script type="text/javascript" src="../assets/js/SmoothScroll.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery.isotope.js"></script>
     
-<%= yield %>
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="../assets/js/jquery.1.11.1.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
-  <script type="text/javascript" src="../assets/js/SmoothScroll.js"></script>
-  <script type="text/javascript" src="../assets/js/jquery.isotope.js"></script>
-
-  <script src="../assets/js/owl.carousel.js"></script>
-
-  <!-- Javascripts
-  ================================================== -->
-  <script type="text/javascript" src="../assets/js/main.js"></script>
-
-</body>
-</html>
+      <script src="../assets/js/owl.carousel.js"></script>
+    
+      <!-- Javascripts
+      ================================================== -->
+      <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+    </body>
+    </html>

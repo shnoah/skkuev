@@ -1,0 +1,7 @@
+<h1> 수정페이지 입니다.</h1>
+
+<form action="/test/update/<%=@one_post.id%>" method="get">
+평점수정 : <input type="text" value="<%=@one_post.lecture_score%>" name="new_lecture_score"><br>
+내용수정 : <textarea name="new_content"><%=@one_post.content%></textarea><br>
+<input type="submit" value="수정">
+</form>
