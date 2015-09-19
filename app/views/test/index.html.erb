@@ -32,19 +32,11 @@
     <!-- Left nav -->
     <ul class="nav navbar-nav">
       <li><a href="#">ABOUT</a></li>
-      
-      
-      <!-- 대학 단위까지는 하드코딩 
-      
-      대학 뽑아서 과 나열
-      과 뽑아서 과목 나열
-      
-      -->
-      
       <li><a href="#">전공</a>
         <ul class="dropdown-menu">
+        <li class="divider"></li>
           <li class="dropdown-header">인문사회과학캠퍼스</li>
-        
+        <li class="divider"></li>
           <li><a href="#">경영대학</a> 
             <ul class="dropdown-menu">
               <li><a href="#">경영학과</a></li>
@@ -119,6 +111,7 @@
           </li>
           <li class="divider"></li>
           <li class="dropdown-header">자연과학캠퍼스</li>
+          <li class="divider"></li>
           <li><a href="#">자연과학대학</a>
              <ul class="dropdown-menu">
               <li><a href="#">생명과학과</a></li>
@@ -184,14 +177,13 @@
       </li>
       
       <li><a href="#">교양</a></li>
-<!--  <li><a href="#">아이캠</a></li>-->
       <li><a href="#">마켓</a></li>
       <li><a href="#">공지</a></li>
       
     </ul>
 
   
-  </div><!--/.nav-collapse -->
+  </div>
 </div>
 
 
@@ -268,6 +260,8 @@ DB 확인용 페이지<br><br>
 </h4>
 </center>
 
-
+<div class="col-md-12">
+  <%= render :partial => "/test/bottom" %>
+</div>
 
 

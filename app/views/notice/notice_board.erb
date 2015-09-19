@@ -1,3 +1,4 @@
+           <%= render :partial => "/test/navbar" %>       
            <div class="col-md-12" style="height:auto;; text-align:center; border-top: 1px solid #b7b7b7; border-bottom: 1px solid #b7b7b7; background-color: #e5e5e5; margin:0px 0px 0px 0px;"> 
         <div style="padding: 27px 0px 30px 0px;">
           <span style="font-weight: 800; color:#727272; font-size: 120%;">공지사항 |</span> 
@@ -9,19 +10,19 @@
      
      <div class="form-style-10" style="padding: 45px 0px 45px 0px;">
     
-    <div class="section" style="padding-left: 40px"> 공지사항</div>  
+      
     <div class="inner-wrap">
-        <div class="row" id="freeboard_onclick" style="border-bottom: 1px #b5b5b5 solid; text-align: center; padding: 0px 10px 15px 0px;">        
-        <div class="col-md-2 col-xs-4 col-sm-12" style="padding-left: 0px; font-weight: 800; color: #f3ac4d;">번호</div>
-        <div class="col-md-8 col-sm-12 col-xs-4" style=" word-break: break-all;  text-align: left; padding-left: 0px; word-break: break-all;  font-weight: 800; color: #f3ac4d;">제목</div>
-        <div class="col-md-2 col-xs-4 col-sm-12" style="font-weight: 800; color: #f3ac4d;">작성자</div>
+        <div class="row" id="freeboard_onclick" style="border-bottom: 1px #58ACFA; solid; text-align: center; padding: 0px 10px 15px 0px;">        
+        <div class="col-md-2 col-xs-4 col-sm-12" style="padding-left: 0px; font-weight: 800; color: #58ACFA;">번호</div>
+        <div class="col-md-8 col-sm-12 col-xs-4" style=" word-break: break-all;  text-align: left; padding-left: 0px; word-break: break-all;  font-weight: 800; color: #58ACFA;">제목</div>
+        <div class="col-md-2 col-xs-4 col-sm-12" style="font-weight: 800; color: #58ACFA;">작성자</div>
     </div>
         
         
         <% @nna.each do |x|%>
         
              <a href = "/notice/notice_detail/<%=x.id%>">
-                <div class="col-md-2 col-xs-4 col-sm-12" style="padding-left: 0px; font-weight: 500; color: #303130;"> <%=x.id%></div>
+                <div class="col-md-2 col-xs-4 col-sm-12" style="padding-left: 0px; font-weight: 500; color: #303130; text-align: center;"> <%=x.id%></div>
                 <div class="col-md-8 col-sm-12 col-xs-4" style="text-align: left;  padding-left: 0px; font-weight: 500; color: #303130;"><%=x.no_title%></div>
                 <div class="col-md-2 col-xs-4 col-sm-12" style="font-weight: 500; color: #303130;"><%=x.no_writer%></div><br>
              </a>  

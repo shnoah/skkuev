@@ -1,5 +1,6 @@
 class TestController < ApplicationController
     
+    before_action :authenticate_user!, only: [:write]
     
      def index
         @test_table=Subject.all
@@ -11,6 +12,8 @@ class TestController < ApplicationController
         @write = Evaluation.all
         @sb = Market.all
         @nna = Notice.all
+        @username = ""
+        
       end
       
       def specific
@@ -95,7 +98,6 @@ class TestController < ApplicationController
         end
      end
      
-
      
     def evaluate 
          @lecture_name = params[:lecture_name]
@@ -148,6 +150,7 @@ class TestController < ApplicationController
     def finding_test_result
       @results = Subject.search(params[:searching])
     end
+    
     
     
 end

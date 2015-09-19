@@ -1,21 +1,17 @@
     <%= render :partial => "/test/navbar" %>
     
-    <div style="height:300px"></div>
+    <div style="height:30px"></div>
     <div class="col-md-12" style="height:500; text-align:center; background-color: #F0F0F0; margin:0px 0px 0px 0px"> 
         <div style="padding: 20px 0px 20px 0px;">
-          <span style="font-weight: 800; color:#727272; font-size: 120%;"><%=@i.first.dept%>|</span> 
+          <span style="font-weight: 800; color:#727272; font-size: 120%;"><%=@i.first.dept%></span> 
           <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp; 강의과목 입니다.</span>
+          (<%=Subject.where(dept:@i.first.dept).count%>개)</span>
         </div>
       </div>
-    test / <%=@i.first.name%> / <%=Subject.where(dept:@i.first.dept).count%>
-    
-    
     
           <% for i in 1..Subject.where(dept:@i.first.dept).count%>
-            <% j = @i.first %>
+            <% j = @i.take(i).last %>
             
-            <h1><%=j.name%></h1>
-           
            <div class="col-md-3">
             <div class="col-sm-6 col-md-12 col-lg-12">
                 <div class="portfolio-item" data-toggle="modal" data-target='#myModal_<%=j.code%>'>

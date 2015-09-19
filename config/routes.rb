@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
     
-  devise_for :views
-    devise_for :members
-    
     root :to => 'test#front'
 
     get  ':controller(/:action(/:id))'

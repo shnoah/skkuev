@@ -1,35 +1,207 @@
-       <%= render :partial => "/test/navbar" %>
-        
+    <!-- 두번째 상단바
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default2 navbar-fixed-top on">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar" style="background-color: #424242"></span>
+            <span class="icon-bar" style="background-color: #424242"></span>
+            <span class="icon-bar" style="background-color: #424242"></span>
+          </button>
+          <img src="../assets/img/icon.png" style="width: 40px; margin-top: 5px" align="left">
+          <a id="logo" class="navbar-brand" href="/" onClick="window.location.href='/'">SKKU <span class="color">E</span></a>
+        </div>
+
+        <!-- 우측메뉴 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" class="page-scroll">ABOUT</a></li>
+          <li><a href="#" class="page-scroll">전공</a>
+            <ul class="dropdown-menu">
+            <li class="divider"></li>
+              <li class="dropdown-header">인문사회과학캠퍼스</li>
+            <li class="divider"></li>
+              <li><a href="#">경영대학</a> 
+                <ul class="dropdown-menu">
+                  <li><a href="#">경영학과</a></li>
+                  <li><a href="#">글로벌경영학과</a></li>
+                </ul>
+              </li>
+            
+              <li><a href="#">경제대학</a>
+               <ul class="dropdown-menu">
+                  <li><a href="#">경제학과</a></li>
+                  <li><a href="#">통계학과</a></li>
+                  <li><a href="#">글로벌경제학과</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#">문과대학</a>
+               <ul class="dropdown-menu">
+                  <li><a href="#">국어국문학과</a></li>
+                  <li><a href="#">영어영문학과</a></li>
+                  <li><a href="#">프랑스어문학과</a></li>
+                  <li><a href="#">사학과</a></li>
+                  <li><a href="#">중어중문학과</a></li>
+                  <li><a href="#">독어독문학과</a></li>
+                  <li><a href="#">문헌정보학과</a></li>
+                  <li><a href="#">철학과</a></li>
+                  <li><a href="#">한문학과</a></li>
+                  <li><a href="#">러시아어문학과</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#">법과대학</a>
+               <ul class="dropdown-menu">
+                  <li><a href="#">법학과</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#"><strong>사회과학대학</strong></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/test/detail_test/행정학과">행정학과</a></li>
+                  <li><a href="/test/detail_test/정치외교학과">정치외교학과</a></li>
+                  <li><a href="/test/detail_test/신문방송학과">신문방송학과</a></li>
+                  <li><a href="/test/detail_test/사회학과">사회학과</a></li>
+                  <li><a href="/test/detail_test/사회복지학과">사회복지학과</a></li>
+                  <li><a href="/test/detail_test/심리학과">심리학과</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#">예술대학</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">미술학과</a></li>
+                  <li><a href="#">디자인학과</a></li>
+                  <li><a href="#">무용학과</a></li>
+                  <li><a href="#">영상학과</a></li>
+                  <li><a href="#">연기예술학과</a></li>
+                  <li><a href="#">의상학과</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#">유학대학</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">유학·동양학과</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#"><strong>사범대학</strong></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/test/detail_test/교육학과">교육학과</a></li>
+                  <li><a href="/test/detail_test/한문교육과">한문교육과</a></li>
+                  <li><a href="/test/detail_test/수학교육과">수학교육과</a></li>
+                  <li><a href="/test/detail_test/컴퓨터교육과">컴퓨터교육과</a></li>
+                </ul>
+              </li>
+              <li class="divider"></li>
+              <li class="dropdown-header">자연과학캠퍼스</li>
+              <li class="divider"></li>
+              <li><a href="#">자연과학대학</a>
+                 <ul class="dropdown-menu">
+                  <li><a href="#">생명과학과</a></li>
+                  <li><a href="#">수학과</a></li>
+                  <li><a href="#">물리학과</a></li>
+                  <li><a href="#">화학과</a></li>
+                </ul>         
+              </li>
+              <li><a href="#">정보통신대학</a>
+                 <ul class="dropdown-menu">
+                  <li><a href="#">전자전기공학부</a></li>
+                  <li><a href="#">컴퓨터공학과</a></li>
+                  <li><a href="#">소프트웨어학과</a></li>
+                  <li><a href="#">반도체시스템공학과</a></li>
+                </ul>         
+              </li>
+              <li><a href="#">공과대학</a>
+                 <ul class="dropdown-menu">
+                  <li><a href="#">화학공학/고분자공학부</a></li>
+                  <li><a href="#">신소재공학부</a></li>
+                  <li><a href="#">기계공학부</a></li>
+                  <li><a href="#">건축토목공학부</a></li>
+                  <li><a href="#">시스템경영공학과</a></li>
+                  <li><a href="#">조경학과</a></li>
+                  <li><a href="#">건축학과(건축학계열)</a></li>
+                </ul>         
+             </li>
+              <li><a href="#">약학대학</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">약학과</a></li>
+                </ul>
+              </li>
+              <li><a href="#">생명공학대학</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">식품생명공학과</a></li>
+                  <li><a href="#">바이오메카트로닉스학과</a></li>
+                  <li><a href="#">유전공학과</a></li>
+                </ul>
+              </li>
+              <li><a href="#">스포츠과학대학</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">스포츠과학과</a></li>             
+                </ul>
+              </li>
+              <li><a href="#">의과대학</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">의학과</a></li>
+                </ul>
+              </li>
+              <li><a href="#">성균융합원</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">글로벌바이오메디컬엔지니어링학과</a></li>
+                </ul>
+              </li>
+           
+            </ul>
+          </li>
+          
+          <li><a href="#" class="page-scroll">교양</a></li>
+          <li><a href="#" class="page-scroll">마켓</a></li>
+          <li><a href="#">공지</a></li>
+          
+        </ul>      
+            <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+            </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
         <div class="col-md-12" style="height:auto;; text-align:center; background-color: #F0F0F0; margin:0px 0px 0px 0px; padding-top: 50px;"> 
           <div style="padding: 20px 0px 20px 0px;">
             <span style="font-weight: 800; color:#727272; font-size: 120%;">검색결과 |</span> 
             <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp; 강의과목 입니다.</span>
           </div>
         </div>     
-       
+
         <% @results.each do |j|%>
-        <div class="col-md-3">
-        <div class="col-sm-6 col-md-12 col-lg-12">
-            <div class="portfolio-item" data-toggle="modal" data-target='#myModal_<%=j.code%>'>
-                <div class="hover-bg">
-                    <a href="#">
-                        <div class="hover-text">
-                            <h4><%=j.name%></h4>
-                            <small>상세보기</small>
-                            <div class="clearfix"></div>
-                            <i class="fa fa-plus"></i>
-                        </div>
-                         <p style="padding-top: 20%; padding-left: 30%; margin-top: 0px;margin-bottom: 0px;"><h3 style="text-align: center;"><%=j.name%></h3>
-                         <span style="font-weight: 300;color:#b2b2b2; font-size: 90%;"><p style="text-align: center; padding-top: 25px;"><%=j.prof%></p></span>                         
-                         <hr>
-                         <h6 style="text-align: center; margin-top: 0px;"><%=j.code%></h6>
-                         <br>
-                         </p>
-                         <input type="hidden" name='abc' value='<%=j.code%>'>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <div class="col-md-3 col-sm-12 co-xs-12">
+            <div class="form-style-10">
+              <div class="section" style="padding-left: 40px"></div>  
+                    <div class="portfolio-item" data-toggle="modal" data-target='#myModal_<%=j.code%>'>
+                        <div class="hover-bg">
+                          <a href="#">
+                              <div class="hover-text">
+                                  <h4><%=j.name%></h4>
+                                  <small>상세보기</small>
+                                  <div class="clearfix"></div>
+                                  <i class="fa fa-plus"></i>
+                              </div>
+                              <div class="inner-wrap">
+                               <p style="padding-top: 20%; padding-left: 30%; margin-top: 0px;margin-bottom: 0px;"><h3 style="text-align: center;"><%=j.name%></h3>
+                               </div>
+                               <span style="font-weight: 300;color:#b2b2b2; font-size: 90%;"><p style="text-align: center; padding-top: 25px;"><%=j.prof%></p></span>                         
+
+                               <h6 style="text-align: center; margin-top: 0px;"><%=j.code%></h6>
+                               <br>
+                               </p>
+                               <input type="hidden" name='abc' value='<%=j.code%>'>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
                     
         <!-- 평균 -->
@@ -72,7 +244,7 @@
                 <input type="hidden" name="lecture_name" value="<%=@lecture.first.name%>">
                 <input type="hidden" name="lecture_prof" value="<%=@lecture.first.prof%>">
                 
-                <button type="submit" class="btn tf-btn btn-default" style="background-color: #333; border-radius: 5px;"> 평가하기 </button>
+                <button type="submit" class="btn tf-btn btn-default" style="background-color: #81BEF7; border-radius: 5px;"> 평가하기 </button>
               </form>
             </h1>  
         </div>
@@ -168,12 +340,11 @@
           <img src="../assets/img/10.png" style="width: 15px; margin-top: 5px" align="left">
           <h6 style="text-align: center;"><%=@lecture.first.note01%></h6>
           </div>
-        </div>
           <%@eval.each do |x|%>
           <%=x.lecture_score%>
           <%=x.content%> <a href="/test/delete/<%=x.id%>">[x]</a><a href="/test/modify/<%=x.id%>">수정</a>
           <%end%>
-          
+        </div>
           <%end%>     
 
       </div>
@@ -185,3 +356,58 @@
   <div class="col-md-12">
   <%= render :partial => "/test/bottom" %>
   </div>
+  
+<style>
+.form-style-10 {
+    width: 100%;
+    padding: 0px;
+    margin: 40px auto;
+    background: #FFF;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    opacity: 0.8;
+}
+
+.section {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #81BEF7;
+    margin-bottom: 5px;
+    font-weight: 900;
+    font-size: 150%;
+}
+
+.inner-wrap {
+    padding: 30px 40px 30px 40px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+</style>
+
+<!-- SmartMenus jQuery Bootstrap Addon CSS -->
+<link href="http://skkuev-noonproject.c9.io/assets/smartmenu/addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://skkuev-noonproject.c9.io/assets/smartmenu/libs/demo-assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="http://skkuev-noonproject.c9.io/assets/smartmenu/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="http://skkuev-noonproject.c9.io/assets/smartmenu/addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
+
+<script>
+$('#logo').click(function('/')
+</script>
+
+<!-- 동적 3단 계단 -->
+<script src="../assets/js/select.js"></script>

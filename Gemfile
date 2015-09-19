@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
-gem 'search_cop'
-gem 'devise'
 
+gem 'search_cop'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog'
