@@ -4,7 +4,7 @@ class CreateNotices < ActiveRecord::Migration
 
       t.string :no_title
       t.string :no_writer
-      t.text  :no_article
+      t.text  :no_content
       t.string :no_password
 
       t.timestamps null: false

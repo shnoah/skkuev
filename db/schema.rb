@@ -31,9 +31,12 @@ ActiveRecord::Schema.define(version: 20150919022902) do
   end
 
   create_table "notices", force: :cascade do |t|
-    t.string   "notice_content"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "no_title"
+    t.string   "no_writer"
+    t.text     "no_content"
+    t.string   "no_password"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "subjects", force: :cascade do |t|
