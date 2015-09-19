@@ -10,6 +10,7 @@ class TestController < ApplicationController
       def front
         @write = Evaluation.all
         @sb = Market.all
+        @nna = Notice.all
       end
       
       def specific
@@ -29,9 +30,15 @@ class TestController < ApplicationController
 
     #운 테스트
     
+    
+    def detail_test
+       @i = Subject.where(dept: params[:id]) 
+    end
+    
+    
     def write_cate
-        
-          @i = params[:dept]
+           @i = Subject.where(dept: params[:id]) 
+          #@i = params[:dept]
           
     end
     
@@ -97,9 +104,10 @@ class TestController < ApplicationController
     end
      
     def evaluate_write
-       Evaluation.create(lecture_id: params[:lecture_id], lecture_score: params[:lecture_score], content: params[:content])
+       Evaluation.create(lecture_id: params[:lecture_id], lecture_score: params[:lecture_score], lecture_amount: params[:lecture_amount], 
+       lecture_grade: params[:lecture_grade], lecture_achievement: params[:lecture_achievement], content: params[:content])
      
-       redirect_to action: "lecture", id: params[:lecture_id]
+        redirect_to "/", id: params[:lecture_id]
     end
     
     def delete
@@ -138,6 +146,8 @@ class TestController < ApplicationController
     end
     
     def finding_test_result
-      @results= Subject.search(params[:searching])
+      @results = Subject.search(params[:searching])
     end
+    
+    
 end

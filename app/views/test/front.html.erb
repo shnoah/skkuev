@@ -25,9 +25,11 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#tf-home" class="page-scroll">검색</a></li>
             <li><a href="#tf-testimonials" class="page-scroll">마켓</a></li>
-            <li><a href="#tf-works" class="page-scroll">책가방</a></li>
             <li><a href="#footer" class="page-scroll">공지사항</a></li>
             <li><a href="/test/member" class="action">내 정보</a></li>
+            <li><a href="/test/member" class="action">로그아웃</a></li>
+            <li><a href="/test/member" class="action">로그인</a></li>
+            <li><a href="/test/member" class="action">회원가입</a></li>
             <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
         </div>
           </ul>
@@ -35,7 +37,7 @@
       </div><!-- /.container-fluid -->
     </nav>    
     
-    <!-- 3단선택. 검색
+    <!-- 검색
     ==========================================-->
     <div id="tf-home" class="text-center">
         <div class="overlay">
@@ -44,26 +46,13 @@
                 <h1>성균관대학교  <strong><span class="color">강의평가</span></strong></h1>
                 <p class="lead"> 가볍고 <strong> 정확하게 </strong> 그리고 <strong> 솔직한 </strong></p>
 
-                <div class="col-xs-12 col-md-12 col-lg-12">
-                  <form name="form" method="POST" action="/test/write_cate">
-                    <div class="col-xs-12 col-md-4 col-lg-4" style="margin-bottom: 5px;">
-                          <select name="subject" onchange="change_subject(this.form)" class="form-control"></select>
-                    </div>
-                    <div class="col-xs-12 col-md-4 col-lg-4" style="margin-bottom: 5px;">
-                          <select name="group"onchange="change_group(this.form)" class="form-control"></select>
-                    </div>
-                    <div class="col-xs-12 col-md-4 col-lg-4" style="margin-bottom: 5px;">
-                          <select name="dept" class="form-control"></select>
-                    </div>
-                    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 30px;">
-                    <button class="btn tf-btn btn-default"> 검색 </button>
-                    </div>
-                    </form>
-                    
-                    
-
+                <div class="col-xs-12 col-md-12 col-lg-12">           
+                <form action="/test/finding_test_result" method = "get"> 
+                  <input type="text" name="searching" class="form-control">
+                  <br>
+                  <button class="btn tf-btn btn-default"> 검색 </button>
+                </form>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -144,170 +133,6 @@
         </div>
     </div>                
 
-    <!-- 책가방 시스템
-    ==========================================-->
-    <div id="tf-works">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h2 style="text-align: left; margin-left: 20px;"><strong>책가방</strong></h2>
-                <div class="line">
-                </div>
-                <div class="clearfix"></div>
-                <small><em>담은 강의평을 한눈에 보세요</em></small>
-            </div>
-            <div class="space"></div>
-
-            <div class="categories">
-                
-                <ul class="cat">
-                    <li class="pull-left"><h4>바구니 선택:</h4></li>
-                    <li class="pull-right">
-                        <ol class="type">
-                            <li><a href="#" data-filter="*" class="active">전체보기</a></li>
-                            <li><a href="#" data-filter=".web">교양</a></li>
-                            <li><a href="#" data-filter=".photography">제1전공</a></li>
-                            <li><a href="#" data-filter=".app" >제2전공</a></li>
-                            <li><a href="#" data-filter=".branding" >제3전공</a></li>
-                        </ol>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-
-            <div id="lightbox" class="row">
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding all">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/01.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography app all">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/02.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding all">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/03.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/04.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/05.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6 col-md-3 col-lg-3 app">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/06.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/07.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 web">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="../assets/img/portfolio/08.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>  
-        </div>
-    </div>
-
     <!-- About Us Section + Footer Section
     ==========================================-->    
     
@@ -325,6 +150,11 @@
           <a href="/notice/notice_board"><h2><span style="color:white">공지<span class="color">사항</span></span></h2></a>
           </div>
           <hr>
+            <center>  
+              <% @nna.each do |y| %>
+                <a href="/notice/notice_detail/<%=y.id%>"><%=y.created_at.in_time_zone("Seoul").strftime("%Y/%m/%d")%>&nbsp;&nbsp;&nbsp;<%=y.no_title%></a><br>
+              <%end%>
+            </center>  
         </div>
       </div>
       
@@ -347,3 +177,20 @@
         
     <!-- 동적 3단 계단 -->
     <script src="../assets/js/select.js"></script>
+                    
+    <!-- 3단 검색창 백업
+      <form name="form" method="POST" action="/test/write_cate">
+        <div class="col-xs-12 col-md-4 col-lg-4" style="margin-bottom: 5px;">
+              <select name="subject" onchange="change_subject(this.form)" class="form-control"></select>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4" style="margin-bottom: 5px;">
+              <select name="group"onchange="change_group(this.form)" class="form-control"></select>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4" style="margin-bottom: 5px;">
+              <select name="dept" class="form-control"></select>
+        </div>
+        <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 30px;">
+        <button class="btn tf-btn btn-default"> 검색 </button>
+        </div>
+        </form>
+      -->

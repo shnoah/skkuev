@@ -1,7 +1,7 @@
            <div class="col-md-12" style="height:auto;; text-align:center; border-top: 1px solid #b7b7b7; border-bottom: 1px solid #b7b7b7; background-color: #e5e5e5; margin:0px 0px 0px 0px;"> 
         <div style="padding: 27px 0px 30px 0px;">
-          <span style="font-weight: 800; color:#727272; font-size: 120%;">자유게시판 |</span> 
-          <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp;자유롭게 질문해주세요</span>
+          <span style="font-weight: 800; color:#727272; font-size: 120%;">공지사항 |</span> 
+          <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp;닥치고 들어</span>
         </div>
         </div>
      
@@ -9,7 +9,7 @@
      
      <div class="form-style-10" style="padding: 45px 0px 45px 0px;">
     
-    <div class="section" style="padding-left: 40px"> 자유게시판</div>  
+    <div class="section" style="padding-left: 40px"> 공지사항</div>  
     <div class="inner-wrap">
         <div class="row" id="freeboard_onclick" style="border-bottom: 1px #b5b5b5 solid; text-align: center; padding: 0px 10px 15px 0px;">        
         <div class="col-md-2 col-xs-4 col-sm-12" style="padding-left: 0px; font-weight: 800; color: #f3ac4d;">번호</div>
@@ -18,14 +18,14 @@
     </div>
         
         
-        <%fa.each do |x|%>
+        <% @nna.each do |x|%>
         
              <a href = "/notice/notice_detail/<%=x.id%>">
                 <div class="col-md-2 col-xs-4 col-sm-12" style="padding-left: 0px; font-weight: 500; color: #303130;"> <%=x.id%></div>
                 <div class="col-md-8 col-sm-12 col-xs-4" style="text-align: left;  padding-left: 0px; font-weight: 500; color: #303130;"><%=x.no_title%></div>
                 <div class="col-md-2 col-xs-4 col-sm-12" style="font-weight: 500; color: #303130;"><%=x.no_writer%></div><br>
              </a>  
-             <hr style="margin: 5px;     width: 100%;">
+             <hr style="margin: 5px; width: 100%;">
                 <%end%>
         </div>
             
@@ -35,7 +35,4 @@
                   </div>
                   
                   
-                  
-                  <% @nt.each do |x| %>
-                  <%= @x.no_title %>
-                  <% end %>
+                 
