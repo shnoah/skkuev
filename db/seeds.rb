@@ -446,20 +446,20 @@
                  #DB에 저장
                  u=Subject.new(
                      
-                     :group => @arr[0], 
-                     :dept  => @arr[1],
-                     :division => @arr[2],
-                     :code => @arr[3],
-                     :name => @arr[4],
-                     :prof => @arr[5],
-                     :time => @arr[6],
-                     :category => @arr[7],
-                     :credit => @arr[8],
+                     :group => @arr[0], #대학 
+                     :dept  => @arr[1], #학과
+                     :division => @arr[2], #구분
+                     :code => @arr[3], #학수번호
+                     :name => @arr[4], #교과목명
+                     :prof => @arr[5], #교수
+                     :time => @arr[6], #시간,강의실
+                     :category => @arr[7], #분류(기반/심화)ㅅ
+                     :credit => @arr[8], 
                      :l_time => @arr[9],
                      :ppl => @arr[10],
                      :max_ppl => @arr[11],
-                     :note00 => @arr[12],
-                     :note01 => @arr[13],
+                     :note00 => @arr[12], #캠퍼스
+                     :note01 => @arr[13], #수업 종류
                      :note02 => @arr[14],
                      :note03 => @arr[15],
                      :note04 => @arr[16]

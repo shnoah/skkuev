@@ -138,6 +138,6 @@ class TestController < ApplicationController
     end
     
     def finding_test_result
-        @result = Subject.where(name: params[:searching])
+        @results = Subject.where("name LIKE '%?%'", params[:searching])
     end
 end

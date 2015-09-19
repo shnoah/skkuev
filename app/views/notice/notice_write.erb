@@ -1,5 +1,38 @@
-<form action="/notice/notice_write_complete">
-    <input type="text" name="n_title">
-    <input type="text" name="n_content">
-    <input type="submit" value="글쓰기">
-</form>
+<div class="col-md-12" style="height:auto;; text-align:center; border-top: 1px solid #b7b7b7; border-bottom: 1px solid #b7b7b7; background-color: #e5e5e5; margin:0px 0px 0px 0px;"> 
+        <div style="padding: 27px 0px 30px 0px;">
+          <span style="font-weight: 800; color:#727272; font-size: 120%;">공지사항 |</span> 
+          <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp;자유롭게 질문해주세요</span>
+        </div>
+        </div>
+         
+     <div class="col-md-8 col-md-offset-2 col-sm-12 co-xs-12">
+     
+     <div class="form-style-10" style="padding: 45px 0px 45px 0px;">
+        <form action="/notice/notice_write_action" method="POST" enctype="multipart/form-data" name="write_form" onsubmit="return overTag()">
+           
+              <div class="section" style="padding-left: 40px;">자유게시판 작성</div>
+              <div class="inner-wrap">
+                  <label>제목 <input type="text" name="n_title" placeholder="글 제목을 입력해 주세요." required/></label>
+                  <label>내용 <textarea rows="20" name="n_contents" style="color:black" required></textarea></label>  
+              </div>
+             
+              
+              <div class="section" style="padding-left: 40px;">비밀번호</div>
+                  <div class="inner-wrap">
+                 <label>비밀번호<input type="password" name="n_password" /></label>
+              </div>
+              
+              
+              <div class="button-section" style="height: 50px;">
+               
+                     <div style = "text-align:center; margin-top:30px;"><input type="submit" value="작성하기"/>
+                     </div>
+                   <br>
+                   <br>
+                   <br>
+              </div>
+          </form>
+      
+          </div>
+        </div>
+        

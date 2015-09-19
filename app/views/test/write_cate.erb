@@ -1,12 +1,12 @@
 
        <%= render :partial => "/test/navbar" %>
         
-        <div style="height:70px; background-color: #F0F0F0;"></div>
+        <div style="height:50px; background-color: #F0F0F0;"></div>
         
-        <div class="col-md-12" style="height:auto;; text-align:center; border-top: 1px solid #b7b7b7; border-bottom: 1px solid #b7b7b7; background-color: #e5e5e5; margin:0px 0px 0px 0px;"> 
-            <div style="padding: 27px 0px 30px 0px;">
-              <span style="font-weight: 800; color:#727272; font-size: 120%;">마켓게시판 |</span> 
-              <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp;강의를 교환하고, 매매하세요.</span>
+        <div class="col-md-12" style="height:auto;; text-align:center;background-color: #FFFFFF; margin:0px 0px 0px 0px;"> 
+            <div style="padding: 20px 0px 20px 0px;">
+              <span style="font-weight: 800; color:#727272; font-size: 120%;">검색결과 |</span> 
+              <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp;강의평을 볼 수있습니다.</span>
             </div>
             </div>
         
@@ -16,14 +16,15 @@
                   
               <%if j.dept==@i%>
               
-              <div class="col-md-12">
-              <div class="col-md-4"></div>
+              <div class="col-md-12" style="background-color: #F0F0F0">
+              <div class="col-md-3"></div>
               <div class="col-md-6">
-              <center style="background-color: #F0F0F0;">
-               <div class="panel panel-default" data-toggle="modal" data-target='#myModal_<%=j.code%>'>     
-               <p><%=j.name%> / <%=j.code%> / <%=j.prof%></p><br>
+               <button class="panel panel-default" style="width: 514px;
+"  data-toggle="modal" data-target='#myModal_<%=j.code%>'>3
+                         <span style="font-weight: 500;color:#b2b2b2; font-size: 50%;">&n<%=j.prof%></span>  
+               <p><%=j.name%> / <%=j.code%> / p<br>
                <input type="hidden" name='abc' value='<%=j.code%>'>
-               </div>
+               </button>
                </div>
                </div>
               </center>
