@@ -1,9 +1,10 @@
     <!-- 두번째 상단바
     ==========================================-->
+    <div style="height:20px"></div>
+    
     <nav id="tf-menu" class="navbar navbar-default2 navbar-fixed-top on">
       <div class="container">
-
-        <div class="navbar-header">
+        <div class="navbar-header" style="padding-top: 15px;">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar" style="background-color: #424242"></span>
@@ -17,8 +18,8 @@
         <!-- 우측메뉴 -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" class="page-scroll">ABOUT</a></li>
-          <li><a href="#" class="page-scroll">전공</a>
+          <li><a href="#" class="page-scroll"><h5 style="color: white; padding-top: 5px;">ABOUT</h5></a></li>
+          <li><a href="#" class="page-scroll"><h5 style="color: white; padding-top: 5px;">전공</h5></a>
             <ul class="dropdown-menu">
             <li class="divider"></li>
               <li class="dropdown-header">인문사회과학캠퍼스</li>
@@ -156,9 +157,9 @@
             </ul>
           </li>
           
-          <li><a href="#" class="page-scroll">교양</a></li>
-          <li><a href="#" class="page-scroll">마켓</a></li>
-          <li><a href="#">공지</a></li>
+          <li><a href="#" class="page-scroll"><h5 style="color: white; padding-top: 5px;">교양</h5></a></li>
+          <li><a href="/test/market_board" class="page-scroll"><h5 style="color: white; padding-top: 5px;">마켓</h5></a></li>
+          <li><a href="../notice/notice_board"><h5 style="color: white; padding-top: 5px;">공지</h5></a></li>
           
         </ul>      
             <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
@@ -168,14 +169,14 @@
       </div><!-- /.container-fluid -->
     </nav>
     
-        <div class="col-md-12" style="height:auto;; text-align:center; background-color: #F0F0F0; margin:0px 0px 0px 0px; padding-top: 50px;"> 
-          <div style="padding: 20px 0px 20px 0px;">
-            <span style="font-weight: 800; color:#727272; font-size: 120%;">검색결과 |</span> 
-            <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp; 강의과목 입니다.</span>
-          </div>
-        </div>     
-
-        <% @results.each do |j|%>
+    <div class="col-md-12" style="height:auto;; text-align:center; background-color: #F0F0F0; margin:0px 0px 0px 0px; padding-top: 50px;"> 
+      <div style="padding: 20px 0px 20px 0px;">
+        <span style="font-weight: 800; color:#727272; font-size: 120%;">검색결과 |</span> 
+        <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp; 강의과목 입니다.</span>
+      </div>
+    </div>     
+    
+    <% @results.each do |j|%>
         <div class="col-md-3 col-sm-12 co-xs-12">
             <div class="form-style-10">
               <div class="section" style="padding-left: 40px"></div>  
@@ -200,8 +201,7 @@
                           </a>
                       </div>
                   </div>
-              </div>
-          </div>
+            </div>
         </div>
                     
         <!-- 평균 -->
@@ -351,44 +351,43 @@
     </div>
   </div>
 <%end%>
-
         
   <div class="col-md-12">
   <%= render :partial => "/test/bottom" %>
   </div>
   
-<style>
-.form-style-10 {
-    width: 100%;
-    padding: 0px;
-    margin: 40px auto;
-    background: #FFF;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
-    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
-    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    opacity: 0.8;
-}
-
-.section {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #81BEF7;
-    margin-bottom: 5px;
-    font-weight: 900;
-    font-size: 150%;
-}
-
-.inner-wrap {
-    padding: 30px 40px 30px 40px;
-    background: #F8F8F8;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-</style>
+  <style>
+  .form-style-10 {
+      width: 100%;
+      padding: 0px;
+      margin: 40px auto;
+      background: #FFF;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
+      -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
+      -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.13);
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      opacity: 0.8;
+  }
+  
+  .section {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #81BEF7;
+      margin-bottom: 5px;
+      font-weight: 900;
+      font-size: 150%;
+  }
+  
+  .inner-wrap {
+      padding: 30px 40px 30px 40px;
+      background: #F8F8F8;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  </style>
 
 <!-- SmartMenus jQuery Bootstrap Addon CSS -->
 <link href="http://skkuev-noonproject.c9.io/assets/smartmenu/addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet">

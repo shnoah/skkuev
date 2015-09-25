@@ -26,15 +26,13 @@
             <li><a href="#tf-home" class="page-scroll">검색</a></li>
             <li><a href="#tf-testimonials" class="page-scroll">마켓</a></li>
             <li><a href="#footer" class="page-scroll">공지사항</a></li>
-          
-              <li>내정보</li>
+               <%if user_signed_in? %>
+              <li><a href="/" class="action">내정보</a></li>
               <li><a href="/users/sign_out" class="action">로그아웃</a></li>
-      
-            
-
+              <% else %>
               <li><a href="/users/sign_in" class="action">로그인</a></li>
               <li><a href="/users/sign_up" class="action">회원가입</a></li>              
-      
+               <% end %>
             <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
         </div>
           </ul>

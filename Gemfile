@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'devise'
 gem 'search_cop'
 gem 'mini_magick'
 gem 'carrierwave'
